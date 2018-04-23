@@ -57,3 +57,15 @@
             select c;
          foreach (var cust in q)
             Console.WriteLine("id = {0}, City = {1}", cust.CustomerID, cust.City);
+
+*  Standard Query Operators 
+    1. Where
+    
+                  IEnumerable<Product> x = products.Where(p => p.UnitPrice >= 10);
+         
+       equivalent to 
+       
+                IEnumerable<Product> x =
+                      from p in products
+                      where p.UnitPrice >= 10
+                      select p;
