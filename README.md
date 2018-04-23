@@ -17,15 +17,19 @@
            }
          }
          
+         
          BURKE
          DAVID
          FRANK
-         To understand how language-integrated query works, we need to dissect the
-          first statement of our program.
-         IEnumerable<string> query = from s in names 
-                                    where s.Length == 5
-                                    orderby s
-                                    select s.ToUpper();
+                                    
+          Lambda Expressions
+          Func<string, bool>   filter  = s => s.Length == 5;
+         Func<string, string> extract = s => s;
+         Func<string, string> project = s => s.ToUpper();
+
+         IEnumerable<string> query = names.Where(filter) 
+                                          .OrderBy(extract)
+                                          .Select(project);
                                     
                                     
 *  LINQ to SQL
