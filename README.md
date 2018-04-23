@@ -73,6 +73,13 @@
                         set { this._Orders.Assign(value); }
                      }
                   }
+    3. Querying accross relationships
+    
+             var q =
+                     from c in db.Customers
+                     from o in c.Orders
+                     where c.City == "London"
+                     select new { c, o };
 
 *  Standard Query Operators 
     1. Where
