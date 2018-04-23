@@ -57,6 +57,22 @@
             select c;
          foreach (var cust in q)
             Console.WriteLine("id = {0}, City = {1}", cust.CustomerID, cust.City);
+            
+    2. Defining relationships
+    
+             [Table(Name="Customers")]
+                  public class Customer
+                  {
+                     [Column(Id=true)]
+                     public string CustomerID;
+                     ...
+                     private EntitySet<Order> _Orders;
+                     [Association(Storage="_Orders", OtherKey="CustomerID")]
+                     public EntitySet<Order> Orders {
+                        get { return this._Orders; }
+                        set { this._Orders.Assign(value); }
+                     }
+                  }
 
 *  Standard Query Operators 
     1. Where
