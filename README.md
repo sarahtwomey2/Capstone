@@ -80,6 +80,20 @@
                      from o in c.Orders
                      where c.City == "London"
                      select new { c, o };
+                     
+    4. modifying and saving entities
+    
+             Northwind db = new Northwind("c:\\northwind\\northwnd.mdf");
+                  // Query for a specific customer
+                  string id = "ALFKI";
+                  var cust = db.Customers.Single(c => c.CustomerID == id);
+                  // Change the name of the contact
+                  cust.ContactName = "New Contact";
+                  // Create and add a new Order to Orders collection
+                  Order ord = new Order { OrderDate = DateTime.Now };
+                  cust.Orders.Add(ord);
+                  // Ask the DataContext to save all the changes
+                  db.SubmitChanges();
 
 *  Standard Query Operators 
     1. Where
