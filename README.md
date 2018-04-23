@@ -1,6 +1,7 @@
 # Capstone
 *  LINQ
 
+         1.
          class app {
            static void Main() {
              string[] names = { "Burke", "Connor", "Frank", 
@@ -22,8 +23,8 @@
          DAVID
          FRANK
                                     
-          Lambda Expressions
-          Func<string, bool>   filter  = s => s.Length == 5;
+         2. Lambda Expressions
+         Func<string, bool>   filter  = s => s.Length == 5;
          Func<string, string> extract = s => s;
          Func<string, string> project = s => s.ToUpper();
 
