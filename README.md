@@ -13,6 +13,7 @@
          }
          
          DataContext: 
+         
          // DataContext takes a connection string 
          DataContext db = new   DataContext("c:\\northwind\\northwnd.mdf");
          // Get a typed table to run queries
